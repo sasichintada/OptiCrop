@@ -1,4 +1,4 @@
-# run.py - Launcher for OptiCrop
+# run.py - Launcher for OptiCrop (from Development Phase)
 import os
 import sys
 import subprocess
