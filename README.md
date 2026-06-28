@@ -257,7 +257,7 @@ source venv/bin/activate
 ### 4️⃣ Install Dependencies
 
 ```bash
-pip install -r Application/requirements.txt
+pip install -r requirements.txt
 ```
 
 ### 5️⃣ Run the Application
