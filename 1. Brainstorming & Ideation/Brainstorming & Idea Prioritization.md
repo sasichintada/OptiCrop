@@ -8,41 +8,45 @@
 
 ## Brainstorming Session
 
-During the brainstorming phase, various real-world problems were identified and analyzed based on social impact, feasibility, innovation, and technical implementation.
+Various real-world agricultural and technology-driven problems were identified and evaluated based on impact, feasibility, innovation, and implementation complexity.
 
 ### Ideas Generated
 
 | Idea | Description |
 |--------|------------|
-| Smart Crop Recommendation | Recommend crops based on soil and environmental factors |
-| Weather Prediction System | Forecast weather using machine learning |
-| Disease Detection in Plants | Detect crop diseases using image processing |
-| Smart Irrigation System | Optimize water usage using sensors |
-| Agricultural Market Analysis | Predict crop prices and demand |
+| 🌾 Smart Crop Recommendation | Recommend crops using soil and climate conditions |
+| 🌦 Weather Prediction System | Forecast weather using machine learning |
+| 🌱 Plant Disease Detection | Detect crop diseases using AI |
+| 💧 Smart Irrigation System | Optimize water usage |
+| 📈 Agricultural Market Analysis | Predict crop prices and demand |
 
 ---
 
 ## Evaluation Criteria
 
-| Criteria | Weight |
-|-----------|---------|
-| Social Impact | High |
-| Technical Feasibility | High |
-| Innovation | Medium |
-| Data Availability | High |
-| Scalability | High |
+### Key Factors Considered
+
+📊 Social Impact
+
+⚙ Technical Feasibility
+
+💡 Innovation
+
+📂 Data Availability
+
+📈 Scalability
 
 ---
 
 ## Idea Prioritization Matrix
 
-| Idea | Impact | Feasibility | Priority |
-|--------|---------|------------|----------|
-| Crop Recommendation | High | High | ⭐⭐⭐⭐⭐ |
-| Disease Detection | High | Medium | ⭐⭐⭐⭐ |
-| Smart Irrigation | Medium | Medium | ⭐⭐⭐ |
-| Weather Prediction | Medium | High | ⭐⭐⭐ |
-| Market Analysis | Medium | Medium | ⭐⭐ |
+| Idea | Impact | Feasibility |
+|--------|---------|------------|
+| Smart Crop Recommendation | High | High | 
+| Plant Disease Detection | High | Medium | 
+| Smart Irrigation | Medium | Medium | 
+| Weather Prediction | Medium | High | 
+| Market Analysis | Medium | Medium | 
 
 ---
 
@@ -50,17 +54,17 @@ During the brainstorming phase, various real-world problems were identified and 
 
 ### 🌾 OptiCrop
 
-Reason for Selection:
+Reasons for Selection
 
-✅ High social impact
+🌱 Addresses a real agricultural problem
 
-✅ Easily available dataset
+📊 Availability of quality datasets
 
-✅ Strong machine learning application
+🤖 Strong Machine Learning application
 
-✅ Supports farmers
+👨‍🌾 Supports farmers and agriculture
 
-✅ Promotes sustainable agriculture
+♻ Promotes sustainable farming
 
 ---
 
@@ -76,4 +80,4 @@ Priority Analysis
         ↓
 Final Selection
         ↓
-OptiCrop
+🌾 OptiCrop
