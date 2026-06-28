@@ -38,6 +38,7 @@ Each record consists of:
 The target variable is:
 
 * **Label** – Recommended crop name
+* Dataset Link: https://www.kaggle.com/datasets/chitrakumari25/smart-agricultural-production-optimizing-engine
 
 ---
 
