@@ -29,15 +29,21 @@ The executable files are used to:
 
 ## 1. run.py
 
+### Location
+
+```text
+OptiCrop/run.py
+```
+
 ### Purpose
 
 Acts as the main entry point of the OptiCrop application.
 
 ### Functionality
 
-* Starts the Flask server.
+* Launches the Flask server.
 * Loads required configurations.
-* Launches the web application.
+* Starts the web application.
 
 ### Execution
 
@@ -52,7 +58,7 @@ python run.py
 ### Location
 
 ```text
-Application/app.py
+OptiCrop/5.Project_Development_Phase/Application/app.py
 ```
 
 ### Purpose
@@ -69,46 +75,17 @@ Core Flask application file.
 ### Execution
 
 ```bash
-python Application/app.py
+python 5.Project_Development_Phase/Application/app.py
 ```
 
 ---
 
-## 3. preprocessing.py
+## 3. model_training.py
 
 ### Location
 
 ```text
-Preprocessing/preprocessing.py
-```
-
-### Purpose
-
-Performs data preprocessing operations.
-
-### Functionality
-
-* Reads dataset
-* Handles missing values
-* Detects outliers
-* Performs feature scaling
-* Encodes crop labels
-* Splits training and testing data
-
-### Execution
-
-```bash
-python Preprocessing/preprocessing.py
-```
-
----
-
-## 4. model_training.py
-
-### Location
-
-```text
-Application/model_training.py
+OptiCrop/5.Project_Development_Phase/Application/model_training.py
 ```
 
 ### Purpose
@@ -117,17 +94,46 @@ Trains machine learning models.
 
 ### Functionality
 
-* Loads processed dataset
-* Trains Random Forest
-* Trains Logistic Regression
-* Trains KNN
-* Performs evaluation
-* Saves trained models
+* Loads processed dataset.
+* Trains Random Forest.
+* Trains Logistic Regression.
+* Trains KNN.
+* Performs evaluation.
+* Saves trained models.
 
 ### Execution
 
 ```bash
-python Application/model_training.py
+python 5.Project_Development_Phase/Application/model_training.py
+```
+
+---
+
+## 4. preprocessing.py
+
+### Location
+
+```text
+OptiCrop/5.Project_Development_Phase/Preprocessing/preprocessing.py
+```
+
+### Purpose
+
+Performs data preprocessing operations.
+
+### Functionality
+
+* Reads dataset.
+* Handles missing values.
+* Detects outliers.
+* Performs feature scaling.
+* Encodes crop labels.
+* Splits training and testing data.
+
+### Execution
+
+```bash
+python 5.Project_Development_Phase/Preprocessing/preprocessing.py
 ```
 
 ---
@@ -137,7 +143,7 @@ python Application/model_training.py
 ### Location
 
 ```text
-Data_Analysis/eda.py
+OptiCrop/7.Project_Documentation/Data_Analysis/eda.py
 ```
 
 ### Purpose
@@ -146,20 +152,26 @@ Performs Exploratory Data Analysis.
 
 ### Functionality
 
-* Generates statistical summaries
-* Creates visualizations
-* Produces correlation analysis
-* Saves plots
+* Generates statistical summaries.
+* Creates visualizations.
+* Produces correlation analysis.
+* Saves plots for documentation.
 
 ### Execution
 
 ```bash
-python Data_Analysis/eda.py
+python 7.Project_Documentation/Data_Analysis/eda.py
 ```
 
 ---
 
 ## 6. generate_plots.py
+
+### Location
+
+```text
+OptiCrop/generate_plots.py
+```
 
 ### Purpose
 
@@ -167,9 +179,9 @@ Creates project visualization charts.
 
 ### Functionality
 
-* Generates graphs
-* Produces analysis figures
-* Saves plots for reports
+* Generates graphs.
+* Produces analysis figures.
+* Saves plots for reports.
 
 ### Execution
 
@@ -181,14 +193,15 @@ python generate_plots.py
 
 # 📂 Supporting Files
 
-| File                    | Purpose                     |
-| ----------------------- | --------------------------- |
-| Crop_recommendation.csv | Agricultural dataset        |
-| requirements.txt        | Python package dependencies |
-| scaler.pkl              | Feature scaling object      |
-| label_encoder.pkl       | Label encoding object       |
-| processed_crop_data.csv | Processed dataset           |
-| accuracy.txt            | Model performance results   |
+| File                    | Location                                                | Purpose                     |
+| ----------------------- | ------------------------------------------------------- | --------------------------- |
+| Crop_recommendation.csv | `OptiCrop/Dataset/Crop_recommendation.csv`              | Agricultural dataset        |
+| requirements.txt        | `OptiCrop/requirements.txt`                             | Python package dependencies |
+| crop_model.pkl          | `OptiCrop/5.Project_Development_Phase/Model/models/`    | Trained ML model            |
+| scaler.pkl              | `OptiCrop/5.Project_Development_Phase/Model/models/`    | Feature scaling object      |
+| label_encoder.pkl       | `OptiCrop/5.Project_Development_Phase/Preprocessing/processed/` | Label encoding object |
+| processed_crop_data.csv | `OptiCrop/5.Project_Development_Phase/Preprocessing/processed/` | Processed dataset |
+| accuracy.txt            | `OptiCrop/5.Project_Development_Phase/Model/results/`   | Model performance results   |
 
 ---
 
@@ -247,7 +260,7 @@ Web Application
 ## Install Dependencies
 
 ```bash
-pip install -r Application/requirements.txt
+pip install -r requirements.txt
 ```
 
 ## Run the Application
