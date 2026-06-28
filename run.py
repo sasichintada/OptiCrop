@@ -3,8 +3,8 @@ import os
 import sys
 import subprocess
 
-# Run the app from the Application folder
-app_dir = os.path.join(os.path.dirname(__file__), 'Application')
+# Run the app from the new Application folder location
+app_dir = os.path.join(os.path.dirname(__file__), '5. Project Development Phase', 'Application')
 os.chdir(app_dir)
 
 # Run app.py
