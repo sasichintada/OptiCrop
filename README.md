@@ -92,23 +92,92 @@ Rice, Maize, Chickpea, Kidneybeans, Pigeonpeas, Mothbeans, Mungbean, Blackgram, 
 
 ```bash
 OptiCrop/
-├── Application/
-│   ├── app.py
-│   ├── model_training.py
-│   ├── requirements.txt
-│   ├── templates/
-│   └── static/
-├── Data_Analysis/
-├── Database/
+│
+├── 1. Brainstorming & Ideation/
+│   ├── Brainstorming & Idea Prioritization.pdf
+│   ├── Define Problem Statements.pdf
+│   ├── Empathy Map.pdf
+│   └── Literature Survey.pdf
+│
+├── 2. Requirement Analysis/
+│   ├── Customer Journey Map.pdf
+│   ├── Data Flow Diagram.pdf
+│   ├── Solution Requirements.pdf
+│   └── Technology Stack.pdf
+│
+├── 3. Project Design Phase/
+│   ├── Problem-Solution Fit.pdf
+│   ├── Proposed Solution.pdf
+│   └── Solution Architecture.pdf
+│
+├── 4. Project Planning Phase/
+│   ├── Project Planning.pdf
+│   └── Team Planning.pdf
+│
+├── 5.Project_Development_Phase/
+│   ├── Application/
+│   │   ├── app.py
+│   │   ├── model_training.py
+│   │   ├── requirements.txt
+│   │   ├── templates/
+│   │   │   ├── index.html
+│   │   │   ├── features.html
+│   │   │   ├── recommendation.html
+│   │   │   ├── about.html
+│   │   │   ├── contact.html
+│   │   │   └── result.html
+│   │   └── static/
+│   ├── Model/
+│   │   ├── models/
+│   │   │   ├── crop_model.pkl
+│   │   │   └── scaler.pkl
+│   │   └── results/
+│   │       ├── accuracy.txt
+│   │       ├── confusion_matrix.png
+│   │       └── elbow_graph.png
+│   └── Preprocessing/
+│       ├── preprocessing.py
+│       └── processed/
+│
+├── 6. Project Testing/
+│   ├── Performance Testing.pdf
+│   └── Test Results.pdf
+│
+├── 7. Project Documentation/
+│   ├── Data_Analysis/
+│   │   ├── eda.py
+│   │   └── plots/
+│   │       ├── univariate_analysis.png
+│   │       ├── bivariate_analysis.png
+│   │       ├── multivariate_analysis.png
+│   │       └── crop_distribution.png
+│   ├── Architecture.md
+│   ├── Project_Overview.md
+│   ├── Technology_Stack.md
+│   ├── Workflow.md
+│   └── Team.md
+│
+├── 8. Project Demonstration/
+│   ├── Communication.pdf
+│   ├── Demonstration of Proposed Features.pdf
+│   ├── Project Demo Planning.pdf
+│   ├── Scalability & Future Plan.pdf
+│   ├── Team Involvement in Demonstration.pdf
+│   └── screenshots/
+│       ├── Home.png
+│       ├── Features.png
+│       ├── recommendation.png
+│       ├── result.png
+│       ├── about.png
+│       └── contact.png
+│
 ├── Dataset/
-├── Model/
-├── Preprocessing/
-├── Problem_Definition/
-├── docs/
-├── run.py
-├── generate_plots.py
+│   └── Crop_recommendation.csv
+│
+├── venv/
+├── Procfile
 ├── README.md
-└── .gitignore
+└── requirements.txt
 ```
 
 ---
