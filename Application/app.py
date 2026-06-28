@@ -17,27 +17,44 @@ print("="*60)
 # Get the directory where this file is located
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-model_path = os.path.join(BASE_DIR, '..', 'Model', 'models', 'crop_model.pkl')
-scaler_path = os.path.join(BASE_DIR, '..', 'Model', 'models', 'scaler.pkl')
+# Try multiple possible paths for Render deployment
+possible_model_paths = [
+    os.path.join(BASE_DIR, '..', 'Model', 'models', 'crop_model.pkl'),
+    os.path.join(BASE_DIR, 'Model', 'models', 'crop_model.pkl'),
+    os.path.join(os.path.dirname(BASE_DIR), 'Model', 'models', 'crop_model.pkl'),
+    'Model/models/crop_model.pkl',
+]
 
-try:
-    with open(model_path, 'rb') as f:
-        model = pickle.load(f)
-    with open(scaler_path, 'rb') as f:
-        scaler = pickle.load(f)
-    print("✅ Model and scaler loaded successfully!")
-    print(f"📊 Model type: {type(model).__name__}")
-    print(f"🌾 Number of crops: {len(model.classes_)}")
-    print(f"📁 Model path: {model_path}")
-except FileNotFoundError as e:
-    print(f"❌ File not found: {e}")
-    print("⚠️ Please run model_training.py first!")
-    model = None
-    scaler = None
-except Exception as e:
-    print(f"❌ Error loading model: {e}")
-    model = None
-    scaler = None
+possible_scaler_paths = [
+    os.path.join(BASE_DIR, '..', 'Model', 'models', 'scaler.pkl'),
+    os.path.join(BASE_DIR, 'Model', 'models', 'scaler.pkl'),
+    os.path.join(os.path.dirname(BASE_DIR), 'Model', 'models', 'scaler.pkl'),
+    'Model/models/scaler.pkl',
+]
+
+model = None
+scaler = None
+
+for model_path in possible_model_paths:
+    for scaler_path in possible_scaler_paths:
+        try:
+            with open(model_path, 'rb') as f:
+                model = pickle.load(f)
+            with open(scaler_path, 'rb') as f:
+                scaler = pickle.load(f)
+            print(f"✅ Model and scaler loaded successfully!")
+            print(f"📊 Model type: {type(model).__name__}")
+            print(f"🌾 Number of crops: {len(model.classes_)}")
+            print(f"📁 Model path: {model_path}")
+            break
+        except:
+            continue
+    if model is not None:
+        break
+
+if model is None or scaler is None:
+    print("❌ Could not load model files!")
+    print("⚠️ Please make sure crop_model.pkl and scaler.pkl exist in Model/models/")
 
 print("="*60)
 
@@ -80,7 +97,7 @@ def predict():
     # Check if model is loaded
     if model is None or scaler is None:
         return render_template('result.html', 
-                             error="❌ Model not loaded. Please run model_training.py first!", 
+                             error="❌ Model not loaded. Please contact support.", 
                              active_page='recommendation')
     
     try:
@@ -186,7 +203,7 @@ def internal_error(e):
 
 
 # ============================================
-# RUN THE APP
+# RUN THE APP - UPDATED FOR RENDER
 # ============================================
 
 if __name__ == '__main__':
@@ -197,4 +214,8 @@ if __name__ == '__main__':
     print("📱 Press CTRL+C to stop the server")
     print("="*60 + "\n")
     
-    app.run(debug=True, host='127.0.0.1', port=5000)
+    # Get port from environment variable (Render provides this)
+    port = int(os.environ.get('PORT', 5000))
+    debug = os.environ.get('FLASK_DEBUG', 'False').lower() == 'true'
+    
+    app.run(debug=debug, host='0.0.0.0', port=port)
