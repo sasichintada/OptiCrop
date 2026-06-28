@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌾 OptiCrop - Contact</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #f8fafc; min-height: 100vh; }
+
+        .navbar-custom {
+            background: #ffffff;
+            padding: 16px 0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar-custom .nav-brand {
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: #1a202c;
+            text-decoration: none;
+        }
+        .navbar-custom .nav-brand span { color: #48bb78; }
+
+        .navbar-custom .nav-link {
+            color: #4a5568;
+            font-weight: 500;
+            font-size: 0.9rem;
+            padding: 8px 16px;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+            text-decoration: none;
+        }
+
+        .navbar-custom .nav-link:hover {
+            color: #48bb78;
+            background: rgba(72, 187, 120, 0.08);
+        }
+
+        .navbar-custom .nav-link.active {
+            color: #48bb78;
+            background: rgba(72, 187, 120, 0.1);
+        }
+
+        .navbar-custom .btn-nav {
+            background: linear-gradient(135deg, #48bb78, #38a169);
+            color: white;
+            padding: 8px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            border: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .navbar-custom .btn-nav:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(72, 187, 120, 0.3);
+            color: white;
+        }
+
+        .page-header {
+            background: linear-gradient(135deg, #f0fff4, #e6fffa);
+            padding: 40px 0 30px;
+            text-align: center;
+            border-bottom: 1px solid rgba(72, 187, 120, 0.1);
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #1a202c;
+        }
+
+        .page-header p {
+            color: #4a5568;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-card {
+            background: white;
+            border-radius: 20px;
+            padding: 35px 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+            border: 1px solid #e2e8f0;
+            max-width: 700px;
+            margin: 40px auto;
+            text-align: center;
+        }
+
+        .contact-item {
+            padding: 20px;
+            border-radius: 16px;
+            background: #f7fafc;
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-5px);
+            background: #f0fff4;
+            border: 1px solid #48bb78;
+        }
+
+        .contact-item .icon {
+            font-size: 40px;
+            color: #48bb78;
+            margin-bottom: 10px;
+        }
+
+        .contact-item h6 {
+            font-weight: 700;
+            color: #1a202c;
+        }
+
+        .contact-item p {
+            color: #718096;
+            margin: 0;
+        }
+
+        .contact-item a {
+            color: #48bb78;
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        /* AI Assistant Chat */
+        .ai-chat-section {
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        .ai-chat-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+            border: 1px solid #e2e8f0;
+        }
+
+        .ai-chat-card .chat-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .ai-chat-card .chat-header .avatar {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, #48bb78, #38a169);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            color: white;
+        }
+
+        .ai-chat-card .chat-header .info h6 {
+            font-weight: 700;
+            color: #1a202c;
+            margin: 0;
+        }
+
+        .ai-chat-card .chat-header .info p {
+            color: #718096;
+            font-size: 0.8rem;
+            margin: 0;
+        }
+
+        .status-online {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.7rem;
+            color: #48bb78;
+            margin-left: auto;
+        }
+
+        .status-online .dot {
+            width: 8px;
+            height: 8px;
+            background: #48bb78;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        .ai-chat-card .chat-body {
+            min-height: 200px;
+            max-height: 300px;
+            overflow-y: auto;
+            margin-bottom: 15px;
+            padding-right: 10px;
+        }
+
+        .ai-chat-card .chat-body::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .ai-chat-card .chat-body::-webkit-scrollbar-thumb {
+            background: #cbd5e0;
+            border-radius: 10px;
+        }
+
+        .chat-message {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 12px;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .chat-message.user {
+            justify-content: flex-end;
+        }
+
+        .chat-message .bubble {
+            padding: 10px 16px;
+            border-radius: 14px;
+            max-width: 80%;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            white-space: pre-line;
+        }
+
+        .chat-message.ai .bubble {
+            background: #f7fafc;
+            color: #2d3748;
+            border-bottom-left-radius: 4px;
+        }
+
+        .chat-message.user .bubble {
+            background: linear-gradient(135deg, #48bb78, #38a169);
+            color: white;
+            border-bottom-right-radius: 4px;
+        }
+
+        .chat-message .avatar-small {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .chat-message.ai .avatar-small {
+            background: linear-gradient(135deg, #48bb78, #38a169);
+            color: white;
+        }
+
+        .chat-message.user .avatar-small {
+            background: #e2e8f0;
+            color: #4a5568;
+        }
+
+        .quick-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+
+        .quick-buttons .btn-quick {
+            background: #f0fff4;
+            color: #38a169;
+            border: 1px solid #c6f6d5;
+            border-radius: 50px;
+            padding: 5px 16px;
+            font-size: 0.75rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+        .quick-buttons .btn-quick:hover {
+            background: #c6f6d5;
+            transform: scale(1.05);
+        }
+
+        .chat-input-group {
+            display: flex;
+            gap: 10px;
+        }
+
+        .chat-input-group .form-control {
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 10px 16px;
+            font-size: 0.9rem;
+            flex: 1;
+        }
+
+        .chat-input-group .form-control:focus {
+            border-color: #48bb78;
+            box-shadow: 0 0 0 4px rgba(72, 187, 120, 0.1);
+        }
+
+        .chat-input-group .btn-send {
+            background: linear-gradient(135deg, #48bb78, #38a169);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            padding: 0 24px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .chat-input-group .btn-send:hover {
+            transform: scale(1.05);
+        }
+
+        .chat-input-group .btn-send:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .typing-indicator {
+            display: flex;
+            gap: 4px;
+            padding: 8px 12px;
+            background: #f7fafc;
+            border-radius: 14px;
+            width: fit-content;
+        }
+
+        .typing-indicator span {
+            width: 8px;
+            height: 8px;
+            background: #a0aec0;
+            border-radius: 50%;
+            animation: typing 1.4s infinite;
+        }
+
+        .typing-indicator span:nth-child(2) { animation-delay: 0.2s; }
+        .typing-indicator span:nth-child(3) { animation-delay: 0.4s; }
+
+        @keyframes typing {
+            0%, 60%, 100% { transform: translateY(0); }
+            30% { transform: translateY(-6px); }
+        }
+
+        .footer-custom {
+            background: white;
+            border-top: 1px solid #e2e8f0;
+            padding: 20px 0;
+            text-align: center;
+            color: #a0aec0;
+            font-size: 0.85rem;
+        }
+
+        .footer-custom span { color: #48bb78; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            .page-header h1 { font-size: 2rem; }
+            .contact-card { padding: 24px 20px; }
+            .ai-chat-card { padding: 20px; }
+            .quick-buttons .btn-quick { font-size: 0.7rem; padding: 4px 12px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar-custom">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <a href="/" class="nav-brand">🌾 Opti<span>Crop</span></a>
+                <div class="d-none d-md-flex gap-2">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/features" class="nav-link">Features</a>
+                    <a href="/recommendation" class="nav-link">Crop Recommendation</a>
+                    <a href="/about" class="nav-link">About</a>
+                    <a href="/contact" class="nav-link active">Contact</a>
+                </div>
+                <a href="/recommendation" class="btn-nav d-none d-md-block">
+                    <i class="fas fa-robot"></i> AI Assistant
+                </a>
+                <button class="btn btn-light d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <div class="collapse d-md-none mt-3" id="navMenu">
+                <div class="d-flex flex-column gap-2">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/features" class="nav-link">Features</a>
+                    <a href="/recommendation" class="nav-link">Crop Recommendation</a>
+                    <a href="/about" class="nav-link">About</a>
+                    <a href="/contact" class="nav-link active">Contact</a>
+                    <a href="/recommendation" class="btn-nav mt-2 text-center">AI Assistant</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>📬 Contact Us</h1>
+            <p>Have questions or feedback? Reach out to us for support or collaboration.</p>
+        </div>
+    </section>
+
+    <!-- AI Assistant Chat -->
+    <section class="ai-chat-section">
+        <div class="ai-chat-card">
+            <div class="chat-header">
+                <div class="avatar">🤖</div>
+                <div class="info">
+                    <h6>AI Support Assistant</h6>
+                    <p>Powered by OptiCrop AI</p>
+                </div>
+                <div class="status-online">
+                    <span class="dot"></span>
+                    Online
+                </div>
+            </div>
+
+            <div class="quick-buttons">
+                <button class="btn-quick" onclick="askQuick('help')">❓ Help</button>
+                <button class="btn-quick" onclick="askQuick('crops')">🌾 Crops</button>
+                <button class="btn-quick" onclick="askQuick('features')">⚡ Features</button>
+                <button class="btn-quick" onclick="askQuick('support')">📧 Support</button>
+                <button class="btn-quick" onclick="askQuick('pricing')">💰 Pricing</button>
+                <button class="btn-quick" onclick="askQuick('accuracy')">🎯 Accuracy</button>
+                <button class="btn-quick" onclick="askQuick('dataset')">📊 Dataset</button>
+                <button class="btn-quick" onclick="askQuick('technology')">🛠️ Tech</button>
+                <button class="btn-quick" onclick="askQuick('team')">👨‍👩‍👧‍👦 Team</button>
+                <button class="btn-quick" onclick="askQuick('future')">🚀 Future</button>
+            </div>
+
+            <div class="chat-body" id="chatBody">
+                <div class="chat-message ai">
+                    <div class="avatar-small">🤖</div>
+                    <div class="bubble">
+                        👋 Hello! I'm your AI support assistant.<br><br>
+                        I can help you with:<br>
+                        • 🌾 Crop recommendations<br>
+                        • ⚡ Features of OptiCrop<br>
+                        • 📧 Support and contact<br>
+                        • 💰 Pricing and plans<br>
+                        • 🎯 Model accuracy<br>
+                        • 📊 Dataset information<br>
+                        • 🛠️ Technology stack<br>
+                        • 👨‍👩‍👧‍👦 Team members<br>
+                        • 🚀 Future scope<br><br>
+                        Click a quick question above or type your own!
+                    </div>
+                </div>
+            </div>
+
+            <div class="chat-input-group">
+                <input type="text" id="chatInput" class="form-control" placeholder="Type your question...">
+                <button class="btn-send" onclick="sendChat()" id="sendBtn">
+                    <i class="fas fa-paper-plane"></i> Send
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section>
+        <div class="container">
+            <div class="contact-card">
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="contact-item">
+                            <div class="icon">📧</div>
+                            <h6>Email</h6>
+                            <p><a href="mailto:support@opticrop.com">support@opticrop.com</a></p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="contact-item">
+                            <div class="icon">🐙</div>
+                            <h6>GitHub</h6>
+                            <p><a href="#" target="_blank">github.com/opticrop</a></p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="contact-item">
+                            <div class="icon">📱</div>
+                            <h6>Social</h6>
+                            <p><a href="#">@OptiCropAI</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e2e8f0;">
+                    <p style="color: #718096; font-size: 0.95rem;">
+                        <i class="fas fa-clock" style="color: #48bb78;"></i> 
+                        Response time: 24-48 hours
+                    </p>
+                    <p style="color: #718096; font-size: 0.95rem;">
+                        <i class="fas fa-globe" style="color: #48bb78;"></i> 
+                        Available worldwide
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-custom">
+        <div class="container">
+            <p>© 2026 <span>OptiCrop</span>. AI-Powered Smart Agriculture. Made with <i class="fas fa-heart" style="color: #fc8181;"></i></p>
+        </div>
+    </footer>
+
+    <script>
+        // ============================================
+        // AI KNOWLEDGE BASE - ENHANCED
+        // ============================================
+        const knowledgeBase = {
+            'help': "🤖 I'm here to help! Here's what I can assist you with:\n\n🌾 Crop recommendations\n⚡ Features of OptiCrop\n📧 Support and contact\n💰 Pricing and plans\n🎯 Model accuracy\n📊 Dataset information\n🛠️ Technology stack\n👨‍👩‍👧‍👦 Team members\n🚀 Future scope\n\nWhat would you like to know more about?",
+            
+            'crops': "🌾 OptiCrop supports 22 different crops!\n\n1. Rice 🌾\n2. Maize 🌽\n3. Chickpea 🌱\n4. Kidneybeans 🫘\n5. Pigeonpeas\n6. Mothbeans\n7. Mungbean\n8. Blackgram\n9. Lentil\n10. Pomegranate 🍎\n11. Banana 🍌\n12. Mango 🥭\n13. Grapes 🍇\n14. Watermelon 🍉\n15. Muskmelon 🍈\n16. Apple 🍎\n17. Orange 🍊\n18. Papaya 🥭\n19. Coconut 🥥\n20. Cotton 👕\n21. Jute 🌿\n22. Coffee ☕\n\nTo get a recommendation, go to the Crop Recommendation page!",
+            
+            'features': "⚡ OptiCrop Features:\n\n🧠 AI-Powered - 99.86% accurate recommendations\n🌾 22 Crops - Wide variety of crops supported\n⚡ Real-Time - Instant recommendations in seconds\n📊 Data-Driven - Scientific analysis based on 7 parameters:\n   • Nitrogen (N)\n   • Phosphorous (P)\n   • Potassium (K)\n   • Temperature\n   • Humidity\n   • pH Level\n   • Rainfall\n🌱 Sustainable - Optimizes resource utilization\n📱 User-Friendly - Clean, intuitive interface\n🔒 Secure - Your data is safe with us\n\nTry it out on the Crop Recommendation page!",
+            
+            'support': "📧 How to reach us:\n\n📧 Email: support@opticrop.com\n🐙 GitHub: github.com/opticrop\n📱 Social: @OptiCropAI\n\n📞 Support Hours:\n• Monday - Friday: 9:00 AM - 6:00 PM\n• Saturday: 10:00 AM - 4:00 PM\n• Sunday: Closed\n\nResponse time: 24-48 hours\nAvailable worldwide!\n\nWe're here to help you with any questions!",
+            
+            'pricing': "💰 OptiCrop Pricing Plans:\n\n🌾 Basic Plan - Free\n• 10 crop recommendations per month\n• Basic support\n• Standard analytics\n\n🌟 Pro Plan - $9.99/month\n• Unlimited recommendations\n• Priority support\n• Advanced analytics\n• Export results\n\n👨‍🌾 Enterprise Plan - Custom\n• All Pro features\n• Custom models\n• Dedicated support\n• On-premise deployment\n\n🎓 Student Plan - $4.99/month\n• All Pro features\n• 50% discount with student ID\n\nContact us for enterprise pricing!",
+            
+            'accuracy': "🎯 Model Accuracy:\n\n📊 Overall Accuracy: 99.86%\n\n🤖 Best Model: Random Forest\n\n📈 Performance by Algorithm:\n• Random Forest: 99.86%\n• Logistic Regression: 96.36%\n• KNN: 95.68%\n\n📊 Training Data:\n• 2,200 samples\n• 22 crops\n• 7 features\n• 80% training, 20% testing\n\n✅ The model is highly accurate and reliable!",
+            
+            'dataset': "📊 Dataset Information:\n\n📁 Name: Crop Recommendation Dataset\n📤 Source: Kaggle - Chitrakumari25\n📅 Published: April 15, 2022\n\n📊 Statistics:\n• Total Samples: 2,200\n• Total Crops: 22\n• Features: 7\n• Each crop has 100 samples\n\n📋 Features:\n1. Nitrogen (N) - 0 to 140\n2. Phosphorous (P) - 5 to 145\n3. Potassium (K) - 5 to 205\n4. Temperature - 8.83°C to 43.68°C\n5. Humidity - 14.26% to 99.98%\n6. pH - 3.50 to 9.94\n7. Rainfall - 20.21mm to 298.56mm\n\n🌾 All crops have balanced representation!",
+            
+            'technology': "🛠️ Technology Stack:\n\n🐍 Backend:\n• Python 3.11\n• Flask 2.2.2 - Web Framework\n• Scikit-learn 1.1.3 - ML Library\n• Pandas 1.5.2 - Data Manipulation\n• NumPy 1.23.5 - Numerical Operations\n• Matplotlib 3.6.2 - Visualization\n• Seaborn 0.12.1 - Statistical Plots\n\n🎨 Frontend:\n• HTML5\n• CSS3\n• Bootstrap 5 - UI Framework\n• Font Awesome 6 - Icons\n• JavaScript - Interactivity\n\n🤖 Machine Learning:\n• Random Forest - 99.86%\n• Logistic Regression - 96.36%\n• KNN - 95.68%\n• K-Means Clustering\n\n📦 Deployment:\n• Flask Development Server\n• Ready for production deployment",
+            
+            'team': "👨‍👩‍👧‍👦 Team OptiCrop:\n\n👤 Sampatharao Mahesh Kumar - Team Lead\n   • Project planning\n   • GitHub management\n   • Demo video creation\n\n👤 Chikkam Renuka - Member\n   • Data analysis\n   • Visualization\n\n👤 Sasank Kumari Chintada - Member\n   • Model building\n   • Flask app development\n\n👤 Sreeja Mutha - Member\n   • Frontend development\n   • Testing\n\n👤 Dasari Renuka Bhargavi - Member\n   • Documentation\n   • Research\n\n🌟 We're passionate about using AI to revolutionize agriculture!",
+            
+            'future': "🚀 Future Scope:\n\n📱 Mobile App\n• Android & iOS applications\n• Offline capability\n• Push notifications\n\n🌐 Real-time Data\n• IoT sensor integration\n• Real-time soil monitoring\n• Weather API integration\n\n📈 Yield Prediction\n• Predict expected yield\n• Seasonal analysis\n• Market price integration\n\n🌍 Regional Customization\n• Crop recommendations for specific regions\n• Local language support\n• Regional crop databases\n\n🤖 Advanced Features\n• Fertilizer recommendations\n• Irrigation scheduling\n• Pest control advice\n• Soil health monitoring\n\n🌟 We're continuously improving OptiCrop to serve farmers better!"
+        };
+
+        // ============================================
+        // CHAT FUNCTIONS
+        // ============================================
+
+        function askQuick(topic) {
+            const input = document.getElementById('chatInput');
+            const questions = {
+                'help': 'How can you help me?',
+                'crops': 'What crops do you support?',
+                'features': 'What are the features?',
+                'support': 'How can I contact support?',
+                'pricing': 'What are the pricing plans?',
+                'accuracy': 'What is the model accuracy?',
+                'dataset': 'Tell me about the dataset',
+                'technology': 'What technology is used?',
+                'team': 'Who is on the team?',
+                'future': 'What is the future scope?'
+            };
+            input.value = questions[topic] || topic;
+            sendChat();
+        }
+
+        function sendChat() {
+            const input = document.getElementById('chatInput');
+            const message = input.value.trim();
+            if (!message) return;
+
+            addMessage('user', message);
+            input.value = '';
+            document.getElementById('sendBtn').disabled = true;
+
+            // Show typing indicator
+            showTyping();
+
+            setTimeout(() => {
+                removeTyping();
+                let response = getResponse(message);
+                addMessage('ai', response);
+                document.getElementById('sendBtn').disabled = false;
+            }, 600 + Math.random() * 400);
+        }
+
+        function getResponse(message) {
+            const msg = message.toLowerCase();
+
+            if (msg.includes('help') || msg.includes('assist') || msg.includes('what can you do')) {
+                return knowledgeBase.help;
+            } else if (msg.includes('crop') || msg.includes('plant') || msg.includes('grow') || msg.includes('which crop')) {
+                return knowledgeBase.crops;
+            } else if (msg.includes('feature') || msg.includes('function') || msg.includes('what can it do')) {
+                return knowledgeBase.features;
+            } else if (msg.includes('support') || msg.includes('contact') || msg.includes('email') || msg.includes('reach')) {
+                return knowledgeBase.support;
+            } else if (msg.includes('price') || msg.includes('cost') || msg.includes('plan') || msg.includes('pay') || msg.includes('subscription')) {
+                return knowledgeBase.pricing;
+            } else if (msg.includes('accuracy') || msg.includes('precision') || msg.includes('correct') || msg.includes('reliable')) {
+                return knowledgeBase.accuracy;
+            } else if (msg.includes('dataset') || msg.includes('data') || msg.includes('samples') || msg.includes('source')) {
+                return knowledgeBase.dataset;
+            } else if (msg.includes('technology') || msg.includes('tech') || msg.includes('stack') || msg.includes('framework') || msg.includes('language')) {
+                return knowledgeBase.technology;
+            } else if (msg.includes('team') || msg.includes('member') || msg.includes('who made') || msg.includes('develop')) {
+                return knowledgeBase.team;
+            } else if (msg.includes('future') || msg.includes('scope') || msg.includes('plan') || msg.includes('upcoming') || msg.includes('next')) {
+                return knowledgeBase.future;
+            } else if (msg.includes('hello') || msg.includes('hi') || msg.includes('hey') || msg.includes('greetings')) {
+                return "👋 Hello! How can I help you today?\n\nClick a quick question above or ask me about crops, features, support, pricing, accuracy, dataset, technology, team, or future plans!";
+            } else if (msg.includes('thank') || msg.includes('thanks') || msg.includes('appreciate')) {
+                return "🙂 You're welcome! I'm glad I could help.\n\nIs there anything else you'd like to know? Feel free to ask!";
+            } else {
+                return "🤔 I'm not sure about that. Here's what I can help with:\n\n• 🌾 Crop recommendations\n• ⚡ Features of OptiCrop\n• 📧 Support and contact\n• 💰 Pricing and plans\n• 🎯 Model accuracy\n• 📊 Dataset information\n• 🛠️ Technology stack\n• 👨‍👩‍👧‍👦 Team members\n• 🚀 Future scope\n\nClick a quick question above or rephrase your question!";
+            }
+        }
+
+        function addMessage(type, text) {
+            const chatBody = document.getElementById('chatBody');
+            const div = document.createElement('div');
+            div.className = 'chat-message ' + type;
+
+            if (type === 'ai') {
+                div.innerHTML = `
+                    <div class="avatar-small">🤖</div>
+                    <div class="bubble">${text.replace(/\n/g, '<br>')}</div>
+                `;
+            } else {
+                div.innerHTML = `
+                    <div class="bubble">${text.replace(/\n/g, '<br>')}</div>
+                    <div class="avatar-small">👤</div>
+                `;
+            }
+
+            chatBody.appendChild(div);
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }
+
+        function showTyping() {
+            const chatBody = document.getElementById('chatBody');
+            const div = document.createElement('div');
+            div.className = 'chat-message ai';
+            div.id = 'typingIndicator';
+            div.innerHTML = `
+                <div class="avatar-small">🤖</div>
+                <div class="typing-indicator">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            `;
+            chatBody.appendChild(div);
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }
+
+        function removeTyping() {
+            const typing = document.getElementById('typingIndicator');
+            if (typing) typing.remove();
+        }
+
+        // Enter key to send
+        document.getElementById('chatInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                sendChat();
+            }
+        });
+    </script>
+</body>
+</html>

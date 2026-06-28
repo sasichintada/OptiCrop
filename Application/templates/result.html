@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌾 OptiCrop - Results</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f8fafc;
+            min-height: 100vh;
+        }
+
+        .navbar-custom {
+            background: #ffffff;
+            padding: 16px 0;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .navbar-custom .nav-brand {
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: #1a202c;
+            text-decoration: none;
+        }
+        .navbar-custom .nav-brand span {
+            color: #48bb78;
+        }
+        .navbar-custom .nav-link {
+            color: #4a5568;
+            font-weight: 500;
+            font-size: 0.9rem;
+            padding: 8px 16px;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+            text-decoration: none;
+        }
+        .navbar-custom .nav-link:hover {
+            color: #48bb78;
+            background: rgba(72, 187, 120, 0.08);
+        }
+        .navbar-custom .nav-link.active {
+            color: #48bb78;
+            background: rgba(72, 187, 120, 0.1);
+        }
+        .navbar-custom .btn-nav {
+            background: linear-gradient(135deg, #48bb78, #38a169);
+            color: white;
+            padding: 8px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            border: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .navbar-custom .btn-nav:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(72, 187, 120, 0.3);
+            color: white;
+        }
+
+        .main-content {
+            padding: 40px 0 60px;
+        }
+
+        .result-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+            border: 1px solid #e2e8f0;
+            max-width: 750px;
+            margin: 0 auto;
+        }
+
+        .result-hero {
+            background: linear-gradient(135deg, #f0fff4, #e6fffa);
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            border: 1px solid rgba(72, 187, 120, 0.15);
+            margin-bottom: 25px;
+        }
+        .result-hero .crop-icon {
+            font-size: 60px;
+        }
+        .result-hero .crop-name {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #1a202c;
+            margin: 6px 0;
+        }
+        .result-hero .confidence-badge {
+            display: inline-block;
+            background: rgba(72, 187, 120, 0.15);
+            color: #38a169;
+            padding: 6px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .confidence-bar-wrap {
+            margin-top: 14px;
+            background: #e2e8f0;
+            border-radius: 50px;
+            height: 8px;
+            overflow: hidden;
+        }
+        .confidence-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #48bb78, #38a169);
+            border-radius: 50px;
+            transition: width 1.5s ease;
+            animation: growBar 1.5s ease;
+        }
+        @keyframes growBar {
+            from {
+                width: 0%;
+            }
+        }
+
+        .detail-box {
+            background: #f7fafc;
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin: 12px 0;
+            border-left: 4px solid #48bb78;
+        }
+        .detail-box i {
+            color: #48bb78;
+            margin-right: 10px;
+        }
+        .detail-box strong {
+            color: #1a202c;
+        }
+
+        .input-summary {
+            background: #f7fafc;
+            border-radius: 12px;
+            padding: 18px 20px;
+            margin: 20px 0;
+        }
+        .input-summary h6 {
+            color: #1a202c;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        .param-chip {
+            display: inline-block;
+            background: white;
+            padding: 4px 14px;
+            border-radius: 50px;
+            margin: 3px;
+            font-size: 0.85rem;
+            border: 1px solid #e2e8f0;
+        }
+        .param-chip strong {
+            color: #48bb78;
+        }
+
+        .prediction-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 16px;
+            background: #f7fafc;
+            border-radius: 10px;
+            margin: 6px 0;
+        }
+        .prediction-item .left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .prediction-item .rank {
+            width: 24px;
+            height: 24px;
+            background: #e2e8f0;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: #4a5568;
+        }
+        .prediction-item.rank-1 .rank {
+            background: linear-gradient(135deg, #48bb78, #38a169);
+            color: white;
+        }
+        .prediction-item.rank-1 {
+            background: #f0fff4;
+            border: 1px solid rgba(72, 187, 120, 0.2);
+        }
+        .prediction-item .crop-name {
+            font-weight: 500;
+            color: #1a202c;
+        }
+        .prediction-item .prob {
+            font-weight: 600;
+            color: #48bb78;
+        }
+        .prob-bar {
+            width: 60px;
+            height: 4px;
+            background: #e2e8f0;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .prob-bar .fill {
+            height: 100%;
+            background: linear-gradient(90deg, #48bb78, #38a169);
+            border-radius: 10px;
+        }
+
+        .btn-group-actions {
+            display: flex;
+            gap: 12px;
+            margin-top: 25px;
+            flex-wrap: wrap;
+        }
+        .btn-action {
+            flex: 1;
+            min-width: 160px;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        .btn-action-primary {
+            background: linear-gradient(135deg, #48bb78, #38a169);
+            color: white;
+        }
+        .btn-action-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(72, 187, 120, 0.3);
+            color: white;
+        }
+        .btn-action-secondary {
+            background: #f7fafc;
+            color: #4a5568;
+            border: 2px solid #e2e8f0;
+        }
+        .btn-action-secondary:hover {
+            border-color: #48bb78;
+            color: #48bb78;
+        }
+
+        .error-box {
+            text-align: center;
+            padding: 40px 20px;
+        }
+        .error-box .error-icon {
+            font-size: 50px;
+            color: #fc8181;
+        }
+        .error-box h3 {
+            color: #1a202c;
+            font-weight: 700;
+            margin: 16px 0;
+        }
+
+        .footer-custom {
+            background: white;
+            border-top: 1px solid #e2e8f0;
+            padding: 20px 0;
+            text-align: center;
+            color: #a0aec0;
+            font-size: 0.85rem;
+        }
+        .footer-custom span {
+            color: #48bb78;
+        }
+
+        @media (max-width: 768px) {
+            .result-card {
+                padding: 24px 20px;
+            }
+            .result-hero .crop-name {
+                font-size: 2rem;
+            }
+            .btn-group-actions {
+                flex-direction: column;
+            }
+            .btn-action {
+                min-width: unset;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar-custom">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <a href="/" class="nav-brand">🌾 Opti<span>Crop</span></a>
+                <div class="d-none d-md-flex gap-2">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/features" class="nav-link">Features</a>
+                    <a href="/recommendation" class="nav-link active">Crop Recommendation</a>
+                    <a href="/about" class="nav-link">About</a>
+                    <a href="/contact" class="nav-link">Contact</a>
+                </div>
+                <a href="/recommendation" class="btn-nav d-none d-md-block">
+                    <i class="fas fa-robot"></i> AI Assistant
+                </a>
+                <button class="btn btn-light d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <div class="collapse d-md-none mt-3" id="navMenu">
+                <div class="d-flex flex-column gap-2">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/features" class="nav-link">Features</a>
+                    <a href="/recommendation" class="nav-link active">Crop Recommendation</a>
+                    <a href="/about" class="nav-link">About</a>
+                    <a href="/contact" class="nav-link">Contact</a>
+                    <a href="/recommendation" class="btn-nav mt-2 text-center">AI Assistant</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <section class="main-content">
+        <div class="container">
+            <div class="result-card">
+                {% if error %}
+                <!-- Error State -->
+                <div class="error-box">
+                    <div class="error-icon">⚠️</div>
+                    <h3>Something went wrong</h3>
+                    <p class="text-muted">{{ error }}</p>
+                    <a href="/recommendation" class="btn-action btn-action-primary" style="display: inline-flex; margin-top: 16px;">
+                        <i class="fas fa-arrow-left"></i> Go Back
+                    </a>
+                </div>
+                {% else %}
+
+                <!-- Result Hero -->
+                <div class="result-hero">
+                    <div class="crop-icon">🌱</div>
+                    <div class="crop-name">{{ crop }}</div>
+                    <div class="confidence-badge">
+                        <i class="fas fa-check-circle"></i> {{ confidence }}% Confidence
+                    </div>
+                    <div class="confidence-bar-wrap">
+                        <div class="confidence-bar" style="width: {{ confidence }}%;"></div>
+                    </div>
+                </div>
+
+                <!-- Input Summary -->
+                <div class="input-summary">
+                    <h6><i class="fas fa-chart-bar"></i> Your Input Parameters</h6>
+                    <div>
+                        <span class="param-chip"><strong>N:</strong> {{ N }}</span>
+                        <span class="param-chip"><strong>P:</strong> {{ P }}</span>
+                        <span class="param-chip"><strong>K:</strong> {{ K }}</span>
+                        <span class="param-chip"><strong>Temp:</strong> {{ temp }}°C</span>
+                        <span class="param-chip"><strong>Humidity:</strong> {{ humidity }}%</span>
+                        <span class="param-chip"><strong>pH:</strong> {{ ph }}</span>
+                        <span class="param-chip"><strong>Rainfall:</strong> {{ rainfall }}mm</span>
+                    </div>
+                </div>
+
+                <!-- Recommendation -->
+                <div class="detail-box">
+                    <i class="fas fa-lightbulb"></i>
+                    <strong>Recommendation:</strong>
+                    Based on your soil and environmental parameters, <strong>{{ crop }}</strong> is the most suitable crop for your farm with <strong>{{ confidence }}%</strong> confidence.
+                </div>
+
+                <!-- Top 3 Predictions - FIXED VERSION -->
+                <div style="margin: 20px 0;">
+                    <h6 style="color: #1a202c; font-weight: 600; margin-bottom: 10px;">
+                        <i class="fas fa-chart-simple"></i> Top 3 Crop Matches
+                    </h6>
+                    
+                    {% if top_3 %}
+                        {% for item in top_3 %}
+                        <div class="prediction-item {% if loop.index == 1 %}rank-1{% endif %}">
+                            <div class="left">
+                                <span class="rank">{{ loop.index }}</span>
+                                <span class="crop-name">🌾 {{ item[0] }}</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 12px;">
+                                <div class="prob-bar">
+                                    <div class="fill" style="width: {{ item[1] }}%;"></div>
+                                </div>
+                                <span class="prob">{{ "%.1f"|format(item[1]) }}%</span>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    {% else %}
+                        <div style="text-align: center; color: #718096; padding: 15px; background: #f7fafc; border-radius: 10px;">
+                            <i class="fas fa-info-circle"></i> Top 3 predictions not available
+                        </div>
+                    {% endif %}
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="btn-group-actions">
+                    <a href="/recommendation" class="btn-action btn-action-primary">
+                        <i class="fas fa-arrow-left"></i> Try Another Crop
+                    </a>
+                    <button class="btn-action btn-action-secondary" onclick="window.print()">
+                        <i class="fas fa-print"></i> Print Results
+                    </button>
+                </div>
+
+                {% endif %}
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-custom">
+        <div class="container">
+            <p>© 2026 <span>OptiCrop</span>. AI-Powered Smart Agriculture. Made with <i class="fas fa-heart" style="color: #fc8181;"></i></p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
