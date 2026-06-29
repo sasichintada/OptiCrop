@@ -8,7 +8,7 @@
 
 # Introduction
 
-The Solution Architecture of OptiCrop describes the overall structure of the system and how different components interact to provide intelligent crop recommendations. The architecture integrates a web-based user interface, data processing modules, Machine Learning models, and prediction services to deliver accurate and real-time recommendations.
+The Solution Architecture of OptiCrop describes the overall structure of the system and how different components interact to provide intelligent crop recommendations. The architecture integrates a web-based user interface, data processing modules, Machine Learning models, and prediction services to deliver accurate and real-time recommendations .
 
 ---
 
@@ -273,7 +273,7 @@ The system provides:
 
 # Conclusion
 
-The OptiCrop Solution Architecture integrates modern web technologies, data processing techniques, and Machine Learning algorithms to provide a reliable and scalable crop recommendation platform. The architecture ensures efficient data flow, accurate predictions, and a seamless user experience for farmers and agricultural stakeholders.
+The OptiCrop Solution Architecture integrates modern web technologies, data processing techniques, and Machine Learning algorithms to provide a reliable and scalable crop recommendation platform. The architecture ensures efficient data flow, accurate predictions, and a seamless user experience for farmers and agricultural stakeholders .
 
 ---
 
