@@ -16,7 +16,7 @@ Effective team participation ensures a comprehensive presentation and demonstrat
 
 # 🎯 Objectives of Team Demonstration
 
-The team demonstration aims to:
+The team demonstration aims to :
 
 * Present the complete project workflow.
 * Explain individual contributions.
