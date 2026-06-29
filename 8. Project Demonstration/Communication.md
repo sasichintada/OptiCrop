@@ -10,7 +10,7 @@
 
 Effective communication is essential for the successful execution of any project. The Communication Plan defines how team members share information, coordinate activities, discuss project progress, resolve issues, and ensure smooth collaboration throughout the development lifecycle of OptiCrop.
 
-A structured communication strategy helps improve teamwork, transparency, accountability, and project efficiency.
+A structured communication strategy helps improve teamwork, transparency, accountability, and project efficiency .
 
 ---
 

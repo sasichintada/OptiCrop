@@ -10,7 +10,7 @@
 
 Project Demo Planning outlines the strategy for presenting and demonstrating the OptiCrop system to stakeholders, evaluators, mentors, and users. The purpose of the demonstration is to showcase the project's functionality, technical implementation, user interface, machine learning capabilities, and overall impact on agriculture.
 
-A well-planned demonstration helps communicate the value, innovation, and effectiveness of the solution.
+A well-planned demonstration helps communicate the value, innovation, and effectiveness of the solution .
 
 ---
 
@@ -178,6 +178,7 @@ The demonstration will cover:
 📈 KNN
 
 🔍 K-Means Clustering
+
 
 ### Performance Metrics
 

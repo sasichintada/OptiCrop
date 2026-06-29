@@ -251,4 +251,4 @@ OptiCrop demonstrates a strong Problem–Solution Fit by addressing critical agr
 
 ### 🌾 OptiCrop – Smart Agricultural Production Optimization Engine
 
-**Transforming agriculture through Artificial Intelligence and data-driven decision making.**
+**Transforming agriculture through Artificial Intelligence and data-driven decision making .**
