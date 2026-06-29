@@ -10,7 +10,7 @@
 
 Scalability refers to the ability of a system to handle increasing amounts of data, users, and functionalities without affecting performance. Future planning focuses on extending the capabilities of OptiCrop to meet evolving agricultural needs and technological advancements.
 
-The current version of OptiCrop provides intelligent crop recommendations using Machine Learning. Future enhancements can transform it into a comprehensive smart agriculture platform.
+The current version of OptiCrop provides intelligent crop recommendations using Machine Learning. Future enhancements can transform it into a comprehensive smart agriculture platform .
 
 ---
 
