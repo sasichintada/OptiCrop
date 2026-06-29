@@ -10,7 +10,7 @@
 
 OptiCrop is an AI-powered agricultural recommendation system designed to help farmers make informed crop selection decisions based on soil nutrients and environmental conditions. The proposed solution combines Machine Learning techniques, data analytics, and a user-friendly web application to deliver accurate and real-time crop recommendations.
 
-The system aims to improve agricultural productivity, optimize resource utilization, and promote sustainable farming practices through intelligent decision support.
+The system aims to improve agricultural productivity, optimize resource utilization, and promote sustainable farming practices through intelligent decision support .
 
 ---
 
@@ -18,7 +18,7 @@ The system aims to improve agricultural productivity, optimize resource utilizat
 
 The primary objective of OptiCrop is to recommend the most suitable crop for cultivation by analyzing key agricultural parameters.
 
-The solution helps farmers:
+The solution helps farmers :
 
 * Select appropriate crops
 * Improve agricultural productivity
