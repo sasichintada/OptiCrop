@@ -92,23 +92,92 @@ Rice, Maize, Chickpea, Kidneybeans, Pigeonpeas, Mothbeans, Mungbean, Blackgram, 
 
 ```bash
 OptiCrop/
-├── Application/
-│   ├── app.py
-│   ├── model_training.py
-│   ├── requirements.txt
-│   ├── templates/
-│   └── static/
-├── Data_Analysis/
-├── Database/
+│
+├── 1. Brainstorming & Ideation/
+│   ├── Brainstorming & Idea Prioritization.md
+│   ├── Define Problem Statements.md
+│   ├── Empathy Map.md
+│   └── Literature Survey.md
+│
+├── 2. Requirement Analysis/
+│   ├── Customer Journey Map.md
+│   ├── Data Flow Diagram.md
+│   ├── Solution Requirements.md
+│   └── Technology Stack.md
+│
+├── 3. Project Design Phase/
+│   ├── Problem-Solution Fit.md
+│   ├── Proposed Solution.md
+│   └── Solution Architecture.md
+│
+├── 4. Project Planning Phase/
+│   ├── Project Planning.md
+│   └── Team Planning.md
+│
+├── 5. Project_Development_Phase/
+│   ├── Application/
+│   │   ├── app.py
+│   │   ├── app.ipynb
+│   │   ├── model_training.ipynb
+│   │   ├── requirements.txt
+│   │   ├── templates/
+│   │   │   ├── index.html
+│   │   │   ├── features.html
+│   │   │   ├── recommendation.html
+│   │   │   ├── about.html
+│   │   │   ├── contact.html
+│   │   │   └── result.html
+│   │   └── static/
+│   ├── Model/
+│   │   ├── evaluate.ipynb
+│   │   ├── models/
+│   │   │   ├── crop_model.pkl
+│   │   │   └── scaler.pkl
+│   │   └── results/
+│   │       ├── accuracy.txt
+│   │       ├── confusion_matrix.png
+│   │       └── elbow_graph.png
+│   ├── Preprocessing/
+│   │   ├── preprocessing.ipynb
+│   │   └── processed/
+│   ├── Code-Layout, Readability and Reusability.md
+│   ├── Coding & Solution.md
+│   ├── No. of Functional Features Included in the Solution.md
+│   └── run.py
+│
+├── 6. Project Testing/
+│   ├── Performance Testing.md
+│   └── Test Results.md
+│
+├── 7. Project Documentation/
+│   ├── Data_Analysis/
+│   │   ├── eda.ipynb
+│   │   └── plots/
+│   │       ├── univariate_analysis.png
+│   │       ├── bivariate_analysis.png
+│   │       ├── multivariate_analysis.png
+│   │       └── crop_distribution.png
+│   ├── Architecture.md
+│   ├── Project_Overview.md
+│   ├── Technology_Stack.md
+│   ├── Workflow.md
+│   └── Team.md
+│
+├── 8. Project Demonstration/
+│   ├── Communication.md
+│   ├── Demonstration of Proposed Features.md
+│   ├── Project Demo Planning.md
+│   ├── Scalability & Future Plan.md
+│   ├── Team Involvement in Demonstration.md
+│   └── screenshots/
+│
 ├── Dataset/
-├── Model/
-├── Preprocessing/
-├── Problem_Definition/
-├── docs/
-├── run.py
-├── generate_plots.py
+│   └── Crop_recommendation.csv
+│
+├── venv/
+├── Procfile
 ├── README.md
-└── .gitignore
+└── requirements.txt
 ```
 
 ---

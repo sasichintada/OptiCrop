@@ -58,7 +58,7 @@ python run.py
 ### Location
 
 ```text
-OptiCrop/5.Project_Development_Phase/Application/app.py
+OptiCrop/5. Project_Development_Phase/Application/app.py
 ```
 
 ### Purpose
@@ -75,17 +75,43 @@ Core Flask application file.
 ### Execution
 
 ```bash
-python 5.Project_Development_Phase/Application/app.py
+python 5. Project_Development_Phase/Application/app.py
 ```
 
 ---
 
-## 3. model_training.py
+## 3. app.ipynb (Jupyter Notebook)
 
 ### Location
 
 ```text
-OptiCrop/5.Project_Development_Phase/Application/model_training.py
+OptiCrop/5. Project_Development_Phase/Application/app.ipynb
+```
+
+### Purpose
+
+Jupyter Notebook version of the Flask application.
+
+### Functionality
+
+* Interactive Flask app development.
+* Step-by-step code execution.
+* Visual debugging and testing.
+
+### Execution
+
+```bash
+jupyter notebook 5. Project_Development_Phase/Application/app.ipynb
+```
+
+---
+
+## 4. model_training.ipynb (Jupyter Notebook)
+
+### Location
+
+```text
+OptiCrop/5. Project_Development_Phase/Application/model_training.ipynb
 ```
 
 ### Purpose
@@ -104,17 +130,17 @@ Trains machine learning models.
 ### Execution
 
 ```bash
-python 5.Project_Development_Phase/Application/model_training.py
+jupyter notebook 5. Project_Development_Phase/Application/model_training.ipynb
 ```
 
 ---
 
-## 4. preprocessing.py
+## 5. preprocessing.ipynb (Jupyter Notebook)
 
 ### Location
 
 ```text
-OptiCrop/5.Project_Development_Phase/Preprocessing/preprocessing.py
+OptiCrop/5. Project_Development_Phase/Preprocessing/preprocessing.ipynb
 ```
 
 ### Purpose
@@ -133,17 +159,17 @@ Performs data preprocessing operations.
 ### Execution
 
 ```bash
-python 5.Project_Development_Phase/Preprocessing/preprocessing.py
+jupyter notebook 5. Project_Development_Phase/Preprocessing/preprocessing.ipynb
 ```
 
 ---
 
-## 5. eda.py
+## 6. eda.ipynb (Jupyter Notebook)
 
 ### Location
 
 ```text
-OptiCrop/7.Project_Documentation/Data_Analysis/eda.py
+OptiCrop/7. Project Documentation/Data_Analysis/eda.ipynb
 ```
 
 ### Purpose
@@ -160,48 +186,51 @@ Performs Exploratory Data Analysis.
 ### Execution
 
 ```bash
-python 7.Project_Documentation/Data_Analysis/eda.py
+jupyter notebook 7. Project Documentation/Data_Analysis/eda.ipynb
 ```
 
 ---
 
-## 6. generate_plots.py
+## 7. evaluate.ipynb (Jupyter Notebook)
 
 ### Location
 
 ```text
-OptiCrop/generate_plots.py
+OptiCrop/5. Project_Development_Phase/Model/evaluate.ipynb
 ```
 
 ### Purpose
 
-Creates project visualization charts.
+Evaluates model performance.
 
 ### Functionality
 
-* Generates graphs.
-* Produces analysis figures.
-* Saves plots for reports.
+* Calculates accuracy metrics.
+* Generates classification report.
+* Creates confusion matrix.
+* Performs cross-validation.
+* Saves evaluation results.
 
 ### Execution
 
 ```bash
-python generate_plots.py
+jupyter notebook 5. Project_Development_Phase/Model/evaluate.ipynb
 ```
 
 ---
 
 # 📂 Supporting Files
 
-| File                    | Location                                                | Purpose                     |
-| ----------------------- | ------------------------------------------------------- | --------------------------- |
-| Crop_recommendation.csv | `OptiCrop/Dataset/Crop_recommendation.csv`              | Agricultural dataset        |
-| requirements.txt        | `OptiCrop/requirements.txt`                             | Python package dependencies |
-| crop_model.pkl          | `OptiCrop/5.Project_Development_Phase/Model/models/`    | Trained ML model            |
-| scaler.pkl              | `OptiCrop/5.Project_Development_Phase/Model/models/`    | Feature scaling object      |
-| label_encoder.pkl       | `OptiCrop/5.Project_Development_Phase/Preprocessing/processed/` | Label encoding object |
-| processed_crop_data.csv | `OptiCrop/5.Project_Development_Phase/Preprocessing/processed/` | Processed dataset |
-| accuracy.txt            | `OptiCrop/5.Project_Development_Phase/Model/results/`   | Model performance results   |
+| File                    | Location                                                         | Purpose                     |
+| ----------------------- | ---------------------------------------------------------------- | --------------------------- |
+| Crop_recommendation.csv | `OptiCrop/Dataset/Crop_recommendation.csv`                       | Agricultural dataset        |
+| requirements.txt        | `OptiCrop/requirements.txt`                                      | Python package dependencies |
+| crop_model.pkl          | `OptiCrop/5. Project_Development_Phase/Model/models/`            | Trained ML model            |
+| scaler.pkl              | `OptiCrop/5. Project_Development_Phase/Model/models/`            | Feature scaling object      |
+| label_encoder.pkl       | `OptiCrop/5. Project_Development_Phase/Preprocessing/processed/` | Label encoding object       |
+| processed_crop_data.csv | `OptiCrop/5. Project_Development_Phase/Preprocessing/processed/` | Processed dataset           |
+| accuracy.txt            | `OptiCrop/5. Project_Development_Phase/Model/results/`           | Model performance results   |
+| Procfile                | `OptiCrop/Procfile`                                              | Render deployment file      |
 
 ---
 
@@ -211,13 +240,13 @@ python generate_plots.py
 Dataset Collection
         │
         ▼
-preprocessing.py
+preprocessing.ipynb
         │
         ▼
 Processed Dataset
         │
         ▼
-model_training.py
+model_training.ipynb
         │
         ▼
 Trained Model
@@ -251,6 +280,7 @@ Web Application
 * NumPy
 * Matplotlib
 * Seaborn
+* Jupyter Notebook
 * Visual Studio Code / PyCharm
 
 ---
@@ -261,6 +291,12 @@ Web Application
 
 ```bash
 pip install -r requirements.txt
+```
+
+## Install Jupyter (if not installed)
+
+```bash
+pip install jupyter
 ```
 
 ## Run the Application
@@ -287,6 +323,8 @@ The executable files generate:
 
 ✅ Web application pages
 
+✅ Jupyter Notebooks with interactive outputs
+
 ---
 
 # 🚀 Benefits of Modular Execution
@@ -296,6 +334,7 @@ The executable files generate:
 * Faster debugging
 * Better scalability
 * Reusable code structure
+* Interactive analysis with Jupyter Notebooks
 
 ---
 
