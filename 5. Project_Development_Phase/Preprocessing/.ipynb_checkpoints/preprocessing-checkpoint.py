@@ -183,6 +183,7 @@ print("✅ PREPROCESSING COMPLETED SUCCESSFULLY!")
 print("📁 All processed files saved to 'Preprocessing/processed/'")
 print("="*60)
 
+
 print("\n📦 Processed data ready for model training!")
 print(f"   🎯 Features: {len(numeric_cols)}")
 print(f"   🌾 Crops: {len(label_encoder.classes_)}")
