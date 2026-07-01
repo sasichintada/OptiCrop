@@ -1,3 +1,4 @@
+
 # 🔧 OptiCrop – Data Preprocessing
 
 This folder contains all preprocessing operations performed before training machine learning models for crop recommendation. These steps ensure that the data is clean, consistent, and optimized for predictive modeling.
