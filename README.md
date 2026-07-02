@@ -94,27 +94,26 @@ Rice, Maize, Chickpea, Kidneybeans, Pigeonpeas, Mothbeans, Mungbean, Blackgram, 
 OptiCrop/
 │
 ├── 1. Brainstorming & Ideation/
-│   ├── Brainstorming & Idea Prioritization.md
-│   ├── Define Problem Statements.md
-│   ├── Empathy Map.md
-│   └── Literature Survey.md
+│   ├── Brainstorming & Idea Prioritization.pdf
+│   ├── Define Problem Statements.pdf
+│   ├── Empathy Map.pdf
+│   └── Literature Survey.pdf
 │
 ├── 2. Requirement Analysis/
-│   ├── Customer Journey Map.md
-│   ├── Data Flow Diagram.md
-│   ├── Solution Requirements.md
-│   └── Technology Stack.md
+│   ├── Customer Journey Map.pdf
+│   ├── Data Flow Diagram.pdf
+│   ├── Solution Requirements.pdf
+│   └── Technology Stack.pdf
 │
 ├── 3. Project Design Phase/
-│   ├── Problem-Solution Fit.md
-│   ├── Proposed Solution.md
-│   └── Solution Architecture.md
+│   ├── Problem-Solution Fit.pdf
+│   ├── Proposed Solution.pdf
+│   └── Solution Architecture.pdf
 │
 ├── 4. Project Planning Phase/
-│   ├── Project Planning.md
-│   └── Team Planning.md
+│   └── Project Planning.pdf
 │
-├── 5. Project_Development_Phase/
+├── 5. Project Development Phase/
 │   ├── Application/
 │   │   ├── app.py
 │   │   ├── app.ipynb
@@ -128,6 +127,7 @@ OptiCrop/
 │   │   │   ├── contact.html
 │   │   │   └── result.html
 │   │   └── static/
+│   │
 │   ├── Model/
 │   │   ├── evaluate.ipynb
 │   │   ├── models/
@@ -137,47 +137,38 @@ OptiCrop/
 │   │       ├── accuracy.txt
 │   │       ├── confusion_matrix.png
 │   │       └── elbow_graph.png
+│   │
 │   ├── Preprocessing/
 │   │   ├── preprocessing.ipynb
 │   │   └── processed/
-│   ├── Code-Layout, Readability and Reusability.md
-│   ├── Coding & Solution.md
-│   ├── No. of Functional Features Included in the Solution.md
+│   │
+│   ├── Code-Layout, Readability and Reusability.pdf
+│   ├── Coding & Solution.pdf
+│   ├── No. of Functional Features Included in the Solution.pdf
 │   └── run.py
 │
 ├── 6. Project Testing/
-│   ├── Performance Testing.md
-│   └── Test Results.md
+│   ├── Performance Testing.pdf
+│
 │
 ├── 7. Project Documentation/
-│   ├── Data_Analysis/
-│   │   ├── eda.ipynb
-│   │   └── plots/
-│   │       ├── univariate_analysis.png
-│   │       ├── bivariate_analysis.png
-│   │       ├── multivariate_analysis.png
-│   │       └── crop_distribution.png
-│   ├── Architecture.md
-│   ├── Project_Overview.md
-│   ├── Technology_Stack.md
-│   ├── Workflow.md
-│   └── Team.md
+│   ├── Project Executable Files.pdf
+│   ├── Sample Project Documentation.pdf
+│ 
 │
 ├── 8. Project Demonstration/
-│   ├── Communication.md
-│   ├── Demonstration of Proposed Features.md
-│   ├── Project Demo Planning.md
-│   ├── Scalability & Future Plan.md
-│   ├── Team Involvement in Demonstration.md
-│   └── screenshots/
+│   ├── Communication.pdf
+│   ├── Demonstration of Proposed Features.pdf
+│   ├── Project Demo Planning.pdf
+│   ├── Scalability & Future Plan.pdf
+│   └── Team Involvement in Demonstration.pdf
 │
 ├── Dataset/
 │   └── Crop_recommendation.csv
 │
-├── venv/
 ├── Procfile
-├── README.md
-└── requirements.txt
+├── requirements.txt
+└── README.md
 ```
 
 ---
