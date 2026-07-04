@@ -176,43 +176,31 @@ OptiCrop/
 ## 📸 Screenshots
 
 ### Home Page
-
-![Home Page](screenshots/Home.png)
+![Home Page](8.%20Project%20Demonstration/screenshots/Home.png)
 
 ### Features Section
-
-![Features](screenshots/Features.png)
+![Features](8.%20Project%20Demonstration/screenshots/Features.png)
 
 ### Crop Recommendation Page
-
-![Crop Recommendation](screenshots/recommendation.png)
+![Crop Recommendation](8.%20Project%20Demonstration/screenshots/recommendation.png)
 
 ### Soil Parameters Input
-
-![Soil Parameters](screenshots/soilparameters.png)
+![Soil Parameters](8.%20Project%20Demonstration/screenshots/soilparameters.png)
 
 ### Prediction Results
-
-![Results Page](screenshots/result.png)
+![Results Page](8.%20Project%20Demonstration/screenshots/result.png)
 
 ### Recommendation Result
-
-![Recommendation Result](screenshots/recommendedresult.png)
-
+![Recommendation Result](8.%20Project%20Demonstration/screenshots/recommendedresult.png)
 
 ### About Page
-
-![About Page](screenshots/about.png)
+![About Page](8.%20Project%20Demonstration/screenshots/about.png)
 
 ### AI Assistant
-
-![AI Assistant](screenshots/contact.png)
+![AI Assistant](8.%20Project%20Demonstration/screenshots/contact.png)
 
 ### Contact Links
-
-![Contact Links](screenshots/contactlink.png)
-
-
+![Contact Links](8.%20Project%20Demonstration/screenshots/contactlink.png)
 
 ---
 
